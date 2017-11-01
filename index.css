@@ -1,0 +1,55 @@
+.html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100%;
+}
+/*
+.flex-container {
+	display: flex;
+	width: 100%;
+}
+*/
+
+/**/
+
+#main-body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	/*justify-content: flex-start;*/
+	max-width: 75%;
+	margin-right: 25%;
+	height: 100%; 
+	position: absolute;
+}
+
+#dropdown-menu {
+	justify-content: center;
+	text-align: center;
+}
+
+#flex-item {
+	flex-direction: column;
+	text-align: center;
+}
+
+/**/
+
+#sidebar {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 20%;
+	height: 100%;
+	margin-left: 75%
+}
+
+
+* {
+	border: 1px solid black;
+}
