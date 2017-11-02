@@ -4,42 +4,69 @@
 	<title></title>
 	<link rel="stylesheet" href="index.css">
 </head>
-	
-	<header class = "title-bar">
-
-		<button id = "menu-button"><img src = "images/menu.svg"></button>
-
-		<button id = "category-dropdown">Jackets & Vests</button>
-
-		<button id = "shopping-button"><img src = "images/shopping-cart.svg"></button>
-	
-	</header>
-
 	<body>
-		<!-- <div id="flexbox-container"> -->
 			<div id="main-wrapper">
-				
-				<p id = "instruction-text" >Add or remove items to the clients shopping cart.</p>
+
+				<header class = "title-bar">
+
+					<button id = "menu-button"><img src = "images/menu.svg"></button>
+
+					<button id = "category-dropdown">Jackets & Vests</button>
+
+					<button id = "shopping-button"><img src = "images/shopping-cart.svg"></button>
+	
+				</header>
+			
+				<!-- <p id = "instruction-text" >Add or remove items to the clients shopping cart.</p> -->
 
 				
-				<div id="flex-item">
+				<section>
 
-					<div id="sizechart">size chart</div>
-					<div id="content">content</div>
-				</div>
+					<div id="sizechart">
+						<button id = "small">small</button>
+						<button id = "medium">medium</button>
+						<button id = "large">large</button>
+					</div>
+
+					<div id="content">
+
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+						<div class="item">Item</div>
+
+					</div>
+
+
+				</section>
 
 
 			
 			</div>
 
-
+		<aside>
 			<div id="sidebar">
 				<h1>Summary</h1>
 				<div id="itemsInCart"></div>
 			</div>
 
+		</aside>
 
-		<!-- </div> -->
 
 	<script type="text/javascript" src="index.js"></script>
 	</body>
