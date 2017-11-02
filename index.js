@@ -1,81 +1,17 @@
+$(function () {
 
 
-<<<<<<< HEAD
-// $(".item").on("click",  function() {
-// 	var addtocart = $(this).html();
-// 	$("#itemsincart").append("<div class='itemincart'>" + addtocart + "</div>");
-	
-// });
-=======
 //	Object constructor for each item on pgae
 function newProduct(name, price, category, size, description) {
 	let product ={};
->>>>>>> master
 
 	product.name = name;
 	product.price = price;
 	product.category = category;
 	product.size = size;
 	product.description = description;
+	//product.img = img;
 
-<<<<<<< HEAD
-
-
-
-
-
-// check out
-
-$("#popup-button").on("click", function checkOut(){
-		$("#popup").css("display","flex").show(300);
-
-});
-
-
-$(".cancel").on("click", function confirm(){
-	$("#popup").css("display", "none").hide(300);
-
-});
-
-
-//give the change depending on  how much cash is given
-
-let totalPrice = 80;
-
-
-
-
-$("#print").on("click", function(){
-	printReceipt();
-	printReceiptForCard();
-});
-
-
-function printReceipt(){
-
-let cashGiven = $("#cashGiven").val();
-
-if (cashGiven !== "") {
-	let amountOfChange = cashGiven - totalPrice;
-	$("#amountOfChange").text("Change: $" + amountOfChange);
-
-} else {
-
-	let cardGiven = $("#cardGiven").val();
-	
-	if (cardGiven !== "") {
-		let totalPrice = 0;
-		$("#amountOfChange").text("Payment received!");
-	
-	} else {
-	
-		alert("only enter cash or credit");	
-	}
-}
-
-}
-
-=======
 	return product;
 };
 
@@ -84,7 +20,7 @@ if (cashGiven !== "") {
 let productList = [];
 let shoppingCart = [];
 
-let item1 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description");
+let item1 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description"/*, "../images/jacket1.jpeg"*/);
 let item2 = newProduct("Gloves", 5, "accessories", ["small", "medium", "large"], "This is a hat description");
 let item3 = newProduct("Vest", 89, "outerwear", ["medium", "large"], "This is a hat description");
 let item4 = newProduct("Pants", 45, "pants", ["large"], "This is a hat description");
@@ -124,6 +60,7 @@ function updatePage(item) {
 	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
+	//var pImg = $("<img id ='images' src = '" + item.img + "'>");
 
 	var productID = item.name;
 	$(newItem).attr("id", productID);
@@ -148,7 +85,7 @@ function updateCart(item) {
 	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
 
 //Adds all the data from the new item element to the page
-	$("#itemsincart").append(newItem);
+	$("#itemsincart").prepend(newItem);
 };
 
 
@@ -173,9 +110,7 @@ $(document).on("click", ".item", function() {
  	console.log(shoppingCart);
  	console.log(productToCart.name);
 
- 	shoppingCart.forEach(function(product) {
- 		updateCart(product);
- 	});
+ 		updateCart(productToCart);
 
  	calcPrice();
 
@@ -193,10 +128,69 @@ function calcPrice () {
 	let taxAmount = subTotal * .06;
 	let totalPrice = taxAmount + subTotal;
 
+	$("#totalPrice").text(totalPrice);
+	$("#btn-checkout").text("Checkout: $" + totalPrice);
+	return totalPrice;
+
 console.log(taxAmount);
 console.log(subTotal);
 console.log(totalPrice);
 };
+
+
+
+//check out
+
+$("#btn-checkout").on("click", function checkOut(){
+		$("#popup").css("display","flex").show(300);
+
+});
+
+
+$(".cancel").on("click", function confirm(){
+	$("#popup").css("display", "none").hide(300);
+
+});
+
+
+//give the change depending on  how much cash is given
+
+// let totalPrice = calcPrice();
+
+
+
+
+$("#print").on("click", function(){
+	printReceipt();
+	printReceiptForCard();
+});
+
+
+function printReceipt(){
+
+let cashGiven = $("#cashGiven").val();
+let totalPrice = calcPrice();
+
+if (cashGiven !== "") {
+	let amountOfChange = cashGiven - totalPrice;
+	$("#amountOfChange").text("Change: $" + amountOfChange);
+
+} else {
+
+	let cardGiven = $("#cardGiven").val();
+	
+	if (cardGiven !== "") {
+		let totalPrice = 0;
+		$("#amountOfChange").text("Payment received!");
+	
+	} else {
+	
+		alert("only enter cash or credit");	
+	}
+}
+
+}
+
 //End of functionj
 });
 
@@ -309,4 +303,3 @@ console.log(totalPrice);
 // //Adds all the data from the new item element to the page
 // 	$("#content").append(newItem);
 // };
->>>>>>> master

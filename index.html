@@ -2,32 +2,20 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="index.css">
 </head>
 	<body>
 			<div id="main-wrapper">
-<<<<<<< HEAD
 
 				<header class = "title-bar">
 
-					<button id = "menu-button"><img src = "images/menu.svg"></button>
-
+					<button id = "menu-button"><img src = "../images/menu.svg"></button>
 					<button id = "category-dropdown">Jackets and Vests</button>
-
-					<button id = "shopping-button"><img src = "images/shopping-cart.svg"></button>
-=======
-
-				<header class = "title-bar">
-
-					<button id = "menu-button"><!-- <img src = "images/menu.svg"> --></button>
-					<button id = "category-dropdown">Jackets and Vests</button>
-					<button id = "shopping-button"><!-- <img src = "images/shopping-cart.svg"> --></button>
->>>>>>> master
+					<button id = "shopping-button"><img src = "../images/shopping-cart.svg"></button>
 	
 				</header>
 			
 				<!-- <p id = "instruction-text" >Add or remove items to the clients shopping cart.</p> -->
-
 				
 				<section>
 
@@ -37,56 +25,36 @@
 						<button id = "large">large</button>
 					</div>
 
-<<<<<<< HEAD
-					<button id = "popup-button"> POP UP BUTTON </button>
-
 					<div id="content">
-
-						<li class="item">Item</li>
-						<li class="item">Item2</li>
-						<li class="item">Item3</li>
-						<li class="item">Item4</li>
-
-						<li class="item">Item5</li>
-						<li class="item">Item6</li>
-						<li class="item">Item7</li>
-						<li class="item">Item8</li>
-
-						<li class="item">Item9</li>
-						<li class="item">Item10</li>
-						<li class="item">Item11</li>
-						<li class="item">Item</li>
-
-						<li class="item">Item12</li>
-						<li class="item">Item13</li>
-						<li class="item">Item14</li>
-						<li class="item">Item15</li>
 
 					</div>
 
-					
-=======
-					<div id="content">
-					</div>
-
-
->>>>>>> master
 				</section>
 
-
-			
 			</div>
 
-<<<<<<< HEAD
+		<aside>
 
-			<section id = "popup">
+			<div id="sidebar">
+				<h1>Summary</h1>
+				<div id="itemsincart"></div>
+
+				
+				<div id = "sidebartotal">
+					<button id="btn-checkout">Checkout: $</button>
+				</div>
+			</div>
+
+		</aside>
+
+		<section id = "popup">
 				
 				<div class = "form-container">
 	
 					<div class = form-group>
 	
 						<div id = "popup-title-bar">
-						<h2>$<span id = "totalPrice">80</span></h2>
+						<h2>$<span id = "totalPrice"></span></h2>
 						
 						<button type = "text" class = "cancel">CANCEL</button>
 
@@ -94,7 +62,7 @@
 
 						<div class="form-control">
 								
-								<input class = "input" type = "text" placeholder="Cash - Enter amount" id = "cashGiven">
+								<input class = "input" type = "text" placeholder="Cash - Enter amount" id = "cashGiven" autofocus>
 								</div>
 	
 						<div class="form-control">
@@ -115,29 +83,7 @@
 	
 			</section>
 
-
-
-=======
-		<aside>
-			<div id="sidebar">
-				<h1>Summary</h1>
-				<div id="itemsincart">
-					<div class="itemincart">Item in cart</div>
-					<div class="itemincart">Item in cart</div>
-					<div class="itemincart">Item in cart</div>
-				</div>
-
-				
-				<div id = "sidebartotal" val = '0'>
-					Total
-					<button id="btn-checkout">Checkout</button>
-				</div>
-			</div>
-
-		</aside>
->>>>>>> master
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
-	<!-- <script src = "jquery-3.2.1.js"></script> -->
 	<script src = "index.js"></script>
 	</body>
 </html>
