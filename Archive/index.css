@@ -22,7 +22,7 @@ body {
 
 header {
 	flex: 1;
-	height: 50px;
+	max-height: 50px;
 }
 
 section {

@@ -1,7 +1,36 @@
 /* ----------- title bar and buttons ----------- */
+* {
+	border: 1px solid red;
+}
+
+html {
+    /*height: 100%;*/
+    box-sizing: border-box; 
+}
+
+*, *:before, *:after {
+  box-sizing: inherit; /* https://css-tricks.com/box-sizing/ */
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    display: flex; /* body is the outer flex container */
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+header {
+	flex: 1;
+	max-height: 50px;
+}
+
+section {
+	flex: 5;
+}
 
 .title-bar{
-	height: 50px;
+	/*height: 50px;*/
 	background-color: rgb(255, 255, 255);
 	border-bottom: 1px solid #E3E3E3;
 	display: flex;
@@ -12,11 +41,6 @@
 	margin: 0;
 	padding: 0;
 
-}
-
-
-* {
-	border:1px solid black;
 }
 
 
@@ -65,10 +89,9 @@
 /* ----------- main content ----------- */
 
 #main-wrapper{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
+   	display: flex;
+ 	 flex-direction: column;
+ 	 width: 60%;
 
 }
 
@@ -80,10 +103,57 @@
 		text-align: center;
 		color: #8f8f8f;
 	}
+
+#sizechart button {
+	width: 150px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.item {
+	width: 200px;
+	height: 250px;
+	padding: 20px;
+	margin: 10px;
+}
+/* ----------- sidebar ----------- */
+
+aside {
+	background-color: grey;
+	margin: 0 auto;
+	width: 40%;
+}
+.itemincart {
+	margin: 10px 20px;
+	height: 150px;
+	border-color: black;
 }
 
 
-
-#flex-items{
-	pad: 
+/*This needs to get centered or go somewhere else*/
+#btn-checkout {
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+/*	margin: 0 auto;
+*/	bottom: 10px;
+	right: 10px;
+	padding: 20px 20px;
+	border-radius: 5px;
+}
+#sidebartotal {
+	z-index: 2;
+	position: fixed;
+	height: 10%;
+	width: 40%;
+	bottom: 0;
+	background-color: lightgrey;
 }
