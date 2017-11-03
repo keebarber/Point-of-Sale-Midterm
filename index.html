@@ -49,29 +49,33 @@
 				
 				<div class = "form-container">
 	
-					<div class = form-group>
+				<div class = form-group>
 	
 						<div id = "popup-title-bar">
 						<h2>$<span id = "totalPrice"></span></h2>
+						<button type = "text" class = "cancel">X</button>
 						
-						<button type = "text" class = "cancel">CANCEL</button>
+						
 
 					</div>
 
 					<div class="form-control">
-								
-						<input class = "input" type = "text" placeholder="Cash - Enter amount" id = "cashGiven" autofocus>
+						<label>CASH</label>
+						<input class = "input" type = "text" placeholder="Enter amount" id = "cashGiven" autofocus>
 					</div>
 	
 					<div class="form-control">
-						
-						<input class = "input" type = "text" placeholder="Credit Card - swipe or enter card number" id = "cardGiven" value="">
+						<label>CARD</label>
+						<input class = "input" type = "text" placeholder="Swipe or enter card number" id = "cardGiven" value="">
 					</div>
 
-					<h4><span id = "amountOfChange"></span></h4>
+					
 	
 					<button type = "text" class = "btn" id = "print">Print Receipt</button>
-	
+					
+
+					<p id = "change_styling" ><span id = "amountOfChange"></span></p>
+
 				</div>
 	
 			</div>

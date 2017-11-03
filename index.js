@@ -92,7 +92,7 @@ function updateCart(item) {
 $(document).on("click", ".item", function() {
 	var selectedObject  = $(this).attr("id");
 
-//	Seaches through master inventory list and return object that matches the clicked items ID
+//	Searches through master inventory list and return object that matches the clicked items ID
 	function findIndex(item) {
 	for (let i = 0; i < productList.length; i++) {
 		if (item == productList[i].name) {
@@ -171,7 +171,7 @@ if (cashGiven !== "") {
 		}
 
 	} else {
-		alert("Please accept more cash than the total price.");
+		alert("Please ask for more cash than the total price.");
 		$("#cashGiven").val("");
 	}
 
