@@ -146,6 +146,7 @@ parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
 //	When clicking checkout button, shows final payment page
 $("#btn-checkout").on("click", function checkOut(){
 		$("#popup").css("display","flex").show(300);
+		$("#sidebartotal").css("display", "none");
 });
 
 //	On cancel, closes form and clears input fields
@@ -153,6 +154,7 @@ $(".cancel").on("click", function confirm(){
 	$("#popup").css("display", "none").hide(300);
 	$("#cashGiven").val("");
 	$("#cardGiven").val("");
+	$("#sidebartotal").css("display", "flex");
 });
 
 //	When clicking PRINT RECEIPT button, displays change to be delivered and shows receipt for order below
@@ -174,7 +176,7 @@ if (cashGiven !== "") {
 
 //	If payment is by cash, enter amount tendered
 	if(cashGiven >totalPrice){
-	$("#amountOfChange").text("Change: $" + amountOfChange.toFixed(2));
+	$("#print").text("Change: $" + amountOfChange.toFixed(2));
 
 //	Prints receipt when payment is processed
 		for (var i = shoppingCart.length - 1; i >= 0; i--) {
@@ -192,7 +194,7 @@ if (cashGiven !== "") {
 		let cardGiven = $("#cardGiven").val();
 		if (cardGiven !== "") {
 			let totalPrice = 0;
-			$("#amountOfChange").text("Payment received!");
+			$("#print").text("Payment received!");
 
 	//	Prints receipt when payment is processed
 			for (var i = shoppingCart.length - 1; i >= 0; i--) {
