@@ -1,7 +1,7 @@
 /* ----------- title bar and buttons ----------- */
-* {
+/* * {
 	border: 1px solid red;
-}
+} */
 
 html {
     /*height: 100%;*/
@@ -30,7 +30,6 @@ section {
 }
 
 .title-bar{
-	/*height: 50px;*/
 	background-color: rgb(255, 255, 255);
 	border-bottom: 1px solid #E3E3E3;
 	display: flex;
@@ -40,7 +39,7 @@ section {
 	align-items: center;
 	margin: 0;
 	padding: 0;
-
+	height:50px;
 }
 
 
@@ -95,20 +94,18 @@ section {
 
 }
 
-#instruction-text{
-
-		font-family: Avenir;
-		font-size: .75em;
-		font-weight: 500;
-		text-align: center;
-		color: #8f8f8f;
-	}
-
 #sizechart button {
+	margin: 20px 0;
 	width: 150px;
 	height: 30px;
-	border: 1px solid black;
+	background-color: #fff;
 	border-radius: 5px;
+	color: #6673e0;
+	font-family: Avenir;
+	font-size: 1em;
+	font-weight: 400;
+	text-align: center;
+	color: #6673e0;
 }
 
 #content {
@@ -119,35 +116,120 @@ section {
 }
 
 .item {
-	width: 200px;
-	height: 250px;
+	padding-top: 30px;
 	padding: 20px;
-	margin: 10px;
+	margin: 10px 0;
+	background: #FFFFFF;
+	box-shadow: 0 3px 9px 0 rgba(107, 107, 107, 0.315);
+	text-align: left;
+	font-family: Avenir-Book;
+	font-size: 1em;
+	color: #6C6C6C;
+	letter-spacing: 0;
+	padding: 10px;
+	width: 220px;
+	height: 280px;
+	border: 1px solid rgb(220,220,220);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.item:active {
+	box-shadow: inset 0px 0px 32px 1px rgba(0,0,0,0.75);
 }
 /* ----------- sidebar ----------- */
 
 aside {
-	background-color: grey;
+	/*background-color:rgb(220,220,220);*/
 	margin: 0 auto;
 	width: 40%;
+	border-left: 4px solid #E3E3E3; 
+/*	background-image: url("background.jpg");
+	background-position: center;
+	background-repeat: repeat-y;*/
+	/*background-size: 60%;*/
 }
 .itemincart {
 	margin: 10px 20px;
-	height: 150px;
-	border-color: black;
+/*<<<<<<< HEAD
+	height: 120px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: rgba(160,160,160,.8);
+	color: white;
+	font-weight: 600;
+=======*/
+	height: 50px;
+	padding: 10px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #FFF;
+	border: 2px solid #E3E3E3;
+	/* box-shadow: 0 1px 9px 0 rgba(107, 107, 107, 0.164); */
+	text-align: left;
+	font-family: Avenir-Book;
+	font-size: 1em;
+	color: #6673E0;
+	letter-spacing: 0;
+	text-align: left;
+/*>>>>>>> 2d8bc59478f49d5c9745527da5a0ad088d655f4b
+*/
 }
 
 
-/*This needs to get centered or go somewhere else*/
-#btn-checkout {
-	position: absolute;
+/* ----------- sidebar-edit-shopping-cart ----------- */
+
+.sidebar-title-bar{
+	
+	height: 50px;
+	background-color: rgb(255, 255, 255);
+	border-bottom: 1px solid #E3E3E3;
 	align-items: center;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	position: relative;
+
+}
+
+#sidebar-title{
+	font-family: Avenir;
+	font-size: 1em;
+	font-weight: 500;
+	text-align: center;
+	color: #000000;
+	text-decoration: none;
+	border: none;
+	background: none;
+	padding: 0;
+	margin-top:15px;
+	display: flex;
 	justify-content: center;
-/*	margin: 0 auto;
-*/	bottom: 10px;
-	right: 10px;
+	align-items: center;
+	
+}
+
+/*#btn-checkout {
+	width: 90%;
 	padding: 20px 20px;
-	border-radius: 5px;
+	border-radius: 15px;
+	background-color: #0C9D58;
+	margin: 1%;
+	font-weight: 800px;
+	font-size: 1.25em;
+	color: white;
+	text-shadow: 2px 2px black;
+	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+}
+
+#btn-checkout:hover {
+	filter:  brightness(.8);
 }
 #sidebartotal {
 	z-index: 2;
@@ -155,5 +237,234 @@ aside {
 	height: 10%;
 	width: 40%;
 	bottom: 0;
-	background-color: lightgrey;
+	background-color: rgba(220,220,220,.7);
+	display: flex;
+	justify-content: center;
+}*/
+
+/* --------- End Sidebar CSS ---------*/
+
+#back-button{
+	display: none;
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+	border: none;
+	background: none;
+	justify-content: flex-start;
+	margin-top:15px;
+	padding:0;
+	left:20px;
+	position: absolute;
 }
+
+
+#stepper{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-top: 20px;
+	
+}
+
+#stepper-items{
+	margin-top: 20px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.stepper-title{
+	display: inline;
+	margin:0;
+	margin: 40px;
+}
+
+.active {
+	color: #6673e0;
+}
+
+#btn-checkout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #6673E0;
+	height:100%;
+	width:100%;
+	font-family: Avenir;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 1px;
+
+
+
+}
+#sidebartotal {
+	z-index: 2;
+	position: fixed;
+	height: 10%;
+	width: 40%;
+	bottom: 0;
+	box-shadow: 0 -1px 8px 0 rgba(83, 83, 83, 0.733);
+}
+
+
+#popup {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color:rgba(96, 98, 97, 0.75);
+	
+  }
+
+
+.form-container {
+	
+		margin: 5% auto;
+		background-color: #fff;
+		width:50%;
+		height: 90%;
+		border-radius: 4px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+		padding: 20px;
+		z-index: 2;
+		justify-content: center;
+		position: relative;
+	
+	}
+	
+
+	#popup-title-bar{
+		height: 50px;
+		border-bottom: 1px solid #E3E3E3; 
+	}
+
+	h2{
+		font-family: Avenir;
+		font-size: 2em;
+		font-weight: 900;
+		text-align: center;
+		color: #50e3c2;
+	}
+
+	
+	.form-group{
+		flex-direction: column;
+		justify-content: flex-start;
+	
+	}
+	
+	.form-control{
+		flex-direction: column;
+		margin: 20px;
+		text-align: left;
+	
+	}
+
+	label{
+		font-family: Avenir;
+		font-size: 1em;
+		font-weight: 300;
+		justify-content: flex-start;
+		text-align: left;
+		color: #8f8f8f;
+		margin:20px;
+		text-transform: capitalize;
+		margin-bottom: 10px;
+	}
+	
+	.input{
+		outline: 0;
+		border: 1px solid #F2F2F2;
+		border-radius: 4px;
+		font-family: Avenir;
+		font-size: 2em;
+		font-weight: 900;
+		text-align: left;
+		color: #6673e0;
+		width: 100%;
+		height:64px;
+		text-indent: 20px;
+		margin-top:10px;
+		
+	}
+	
+	h4{
+		text-align: left;
+	}
+
+	.btn {
+		width: 100%;
+		height: 60px;
+		border-radius: 2px;
+		background-color: #6673e0;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+		border:none;
+		font-family: Avenir;
+		font-size: 1.5em;
+		font-weight: 900;
+		text-align: center;
+		color: #ffffff;
+		letter-spacing: 1px;
+	
+	}
+	
+	.cancel {
+	
+		position: absolute;
+
+		right: 20px;
+		top:20px;
+		padding: 0;
+		border: 0;
+		text-align: right;
+		cursor: pointer;
+		font-family: Avenir;
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		font-weight: 900;
+		text-align: center;
+		color: #6673e0;
+		text-decoration: none;
+		background:none;
+		width: 30px;
+	
+	}
+
+	#change_styling{
+		position: absolute;
+		font-family: Avenir;
+		font-size: 1em;
+		font-weight: 900;
+		text-align: right;
+		color: #50e3c2;
+	}
+	
+	.hover-details {
+		width: 120px;
+		height: 40px;
+		position: absolute;
+		margin-top: 100px;
+		border: 2px solid black;
+		border-radius: 5px;
+		background-color: rgba(120,120,120,.8);
+		font-size: .7em;
+		color: black;
+		display: none;
+		margin-top: 10px;
+		margin-left: -55px;
+	}
+	
+	.hover-details p {
+		margin: 4px 2px;
+		padding: 0;
+		text-align: left;
+		font-weight: 700;
+	}

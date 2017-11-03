@@ -1,90 +1,25 @@
+$(function () {
 
 
-<<<<<<< HEAD
-// $(".item").on("click",  function() {
-// 	var addtocart = $(this).html();
-// 	$("#itemsincart").append("<div class='itemincart'>" + addtocart + "</div>");
-	
-// });
-=======
-//	Object constructor for each item on pgae
+//	Object constructor for each item on page
 function newProduct(name, price, category, size, description) {
 	let product ={};
->>>>>>> master
 
 	product.name = name;
 	product.price = price;
 	product.category = category;
 	product.size = size;
 	product.description = description;
-
-<<<<<<< HEAD
-
-
-
-
-
-// check out
-
-$("#popup-button").on("click", function checkOut(){
-		$("#popup").css("display","flex").show(300);
-
-});
-
-
-$(".cancel").on("click", function confirm(){
-	$("#popup").css("display", "none").hide(300);
-
-});
-
-
-//give the change depending on  how much cash is given
-
-let totalPrice = 80;
-
-
-
-
-$("#print").on("click", function(){
-	printReceipt();
-	printReceiptForCard();
-});
-
-
-function printReceipt(){
-
-let cashGiven = $("#cashGiven").val();
-
-if (cashGiven !== "") {
-	let amountOfChange = cashGiven - totalPrice;
-	$("#amountOfChange").text("Change: $" + amountOfChange);
-
-} else {
-
-	let cardGiven = $("#cardGiven").val();
-	
-	if (cardGiven !== "") {
-		let totalPrice = 0;
-		$("#amountOfChange").text("Payment received!");
-	
-	} else {
-	
-		alert("only enter cash or credit");	
-	}
-}
-
-}
-
-=======
+	//product.img = img;
 	return product;
 };
 
 
-//	creates array for all products and initializes them
+//	creates array for all products and cart and initializes them
 let productList = [];
 let shoppingCart = [];
 
-let item1 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description");
+let item1 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description"/*, "../images/jacket1.jpeg"*/);
 let item2 = newProduct("Gloves", 5, "accessories", ["small", "medium", "large"], "This is a hat description");
 let item3 = newProduct("Vest", 89, "outerwear", ["medium", "large"], "This is a hat description");
 let item4 = newProduct("Pants", 45, "pants", ["large"], "This is a hat description");
@@ -110,52 +45,57 @@ productList.push(item11);
 productList.push(item12);
 
 
-//Prints all products to page
+//	Updates page to show all products on main page section under #content
 productList.forEach(function(product) {
 	updatePage(product);
 });
 
 
-//Prints all objects to page
+//	Prints all objects to page by selecting object properties and creating elements on DOM
 function updatePage(item) {
 
-	var newItem = $("<div class='item'>Item</div>");
+	var newItem = $("<div class='item'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>"  + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
+	//var pImg = $("<img id ='images' src = '" + item.img + "'>");
 
+//	Sets id of each product equal to its name
 	var productID = item.name;
 	$(newItem).attr("id", productID);
 	console.log(productID);
 
-//Adds object properties to div on page
+//	Adds object properties to the newItem div on page
 	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
 
-//Adds all the data from the new item element to the page
+//	Adds the newItem div with all information to the page
 	$("#content").append(newItem);
 };
 
-function updateCart(item) {
 
-	var newItem = $("<div class='itemincart'>Item</div>");
+//	Gathers item information and creates element in same process as initial printing of products to main page
+function updateCart(item) {
+debugger;
+	var newItem = $("<div class='itemincart'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>" + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
 
-	//Adds object properties to div on page
-	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
+	$(newItem)
+	.append(pName)
+	.append(pPrice)
+	.append(pCat);//.append(pImg);
 
-//Adds all the data from the new item element to the page
-	$("#itemsincart").append(newItem);
+	$("#itemsincart").prepend(newItem);
 };
 
-
+//	When clicking on div product on main page, seeks out location of object within array and returns the object itself
 $(document).on("click", ".item", function() {
-// debugger;
 	var selectedObject  = $(this).attr("id");
-		// console.log(selectedObject);
+
+//	Searches through master inventory list and return object that matches the clicked items ID
 	function findIndex(item) {
 	for (let i = 0; i < productList.length; i++) {
 		if (item == productList[i].name) {
@@ -165,148 +105,135 @@ $(document).on("click", ".item", function() {
 		return false;
 };
 
+
 //	Git merge
 //Associates index of selected item with main array as a variable
  	let productToCart = findIndex(selectedObject);
 	shoppingCart.push(productToCart);
 
- 	console.log(shoppingCart);
- 	console.log(productToCart.name);
+//	DEBUGGING USE. DISPLAYS INDIVIDUAL ITEM JUST ADDED AS WELL AS FULL CART CONTENT
+ 	// console.log(shoppingCart);
+ 	// console.log(productToCart.name);
 
- 	shoppingCart.forEach(function(product) {
- 		updateCart(product);
- 	});
-
+//	Updates the new product to the shopping cart and updates the total price
+	updateCart(productToCart);
  	calcPrice();
-
 });
 
+
+//	Calculates the price of the items in the cart
 function calcPrice () {
 	let subTotal = 0;
 
+//	Adds price of each item in cart for SUBTOTAL
 	for (var i = shoppingCart.length - 1; i >= 0; i--) {
-
 		subTotal += shoppingCart[i].price;
-		// return subTotal;
 	}
 
+//	Calculates tax and total price
 	let taxAmount = subTotal * .06;
 	let totalPrice = taxAmount + subTotal;
 
-console.log(taxAmount);
-console.log(subTotal);
-console.log(totalPrice);
+parseFloat(Math.round(subTotal * 100) / 100).toFixed(2);
+parseFloat(Math.round(taxAmount * 100) / 100).toFixed(2);
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
+
+
+//	Prints out the total price to the button and top of modal
+	$("#totalPrice").text("Subtotal:  $" + subTotal + " + Tax:  $" + taxAmount.toFixed(2) + " = Total Price: $" +totalPrice);
+	$("#btn-checkout").text("Checkout: $" + totalPrice.toFixed(2));
+	return totalPrice;
 };
-//End of functionj
+
+//	When clicking checkout button, shows final payment page
+$("#btn-checkout").on("click", function checkOut(){
+		$("#popup").css("display","flex").show(300);
+		$("#sidebartotal").css("display", "none");
 });
 
+//	On cancel, closes form and clears input fields
+$(".cancel").on("click", function confirm(){
+	$("#popup").css("display", "none").hide(300);
+	$("#cashGiven").val("");
+	$("#cardGiven").val("");
+	$("#sidebartotal").css("display", "flex");
+});
+
+//	When clicking PRINT RECEIPT button, displays change to be delivered and shows receipt for order below
+$("#print").on("click", function(){
+	printReceipt();
+});
+
+//Prints after checkout
+//	PRINT RECEIPT function
+function printReceipt(){
+
+let cashGiven = $("#cashGiven").val();
+let totalPrice = calcPrice();
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
 
 
-// $(function () {
+if (cashGiven !== "") {
+	let amountOfChange = cashGiven - totalPrice;
+	parseFloat(Math.round(amountOfChange * 100) / 100).toFixed(2);
 
-// //alert("yo");
-// var currentTotal = 0;
-// //	Assigns click handler to all item class elements  on page and moves data to sidebar/cart
-// $(document).on("click", ".item", function(event) {
+//	If payment is by cash, enter amount tendered
+	if(cashGiven >totalPrice){
+	$("#print").text("Change: $" + amountOfChange.toFixed(2));
 
-// debugger;
-// 	let addName = $("p:first", this).text();
-// 	// $("pPrice")
-// 	let addPrice =  $("#pPrice", this).val();
+//	Prints receipt when payment is processed
+		for (var i = shoppingCart.length - 1; i >= 0; i--) {
+			$("#print").after("<p>"+shoppingCart[i].name+ "   - - -   $"+shoppingCart[i].price+"</p>");
+		}
 
-// 	addToCart(addName, addPrice);
+	} else {
+		alert("Please ask for more cash than the total price.");
+		$("#cashGiven").val("");
+	}
 
-// 	currentTotal = $("#sidebartotal").val();
-// 	updateSubTotal(currentTotal, addPrice);
-// });
+} else {
 
+	//	If card information is entered
+		let cardGiven = $("#cardGiven").val();
+		if (cardGiven !== "") {
+			let totalPrice = 0;
+			$("#print").text("Payment received!");
 
-
-// function updateSubTotal(totalPrice, newPrice) {
-
-// 	let a = totalPrice;
-// 	let b = newPrice;
-
-// 	let newTotal = a+b;
-
-// 	$("#sidebartotal").val(newTotal);
-// };
-
-// //Going to use the already stripped name and price of the new item to add it to the cart
-// function addToCart(name, price) {
+	//	Prints receipt when payment is processed
+			for (var i = shoppingCart.length - 1; i >= 0; i--) {
+				$("#print").after("<p>"+shoppingCart[i].name+ "   - - -    $"+shoppingCart[i].price+"</p>");
+			}
 		
+		} else {
+			alert("only enter cash or credit");	
+		}
+	}
 
-// 	$("#itemsincart").append("<div class='itemincart'> " + name + price+ "</div>");	
-// };
+}
 
+//	Atttempting to get size selectors to work
 
+// $("#small").on("click", function() {
+// 	let catArray = [];
+// 	let sizeMatch = false;
 
+// 	for (var i = productList.length - 1; i >= 0; i--) {
+		
+// 		catArray = productList[i].size;
+// 		sizeMatch = false;
 
-
-// //	Object constructor for each item on pgae
-// function newProduct(name, price, category, size, description) {
-// 	let product ={};
-
-// 	product.name = name;
-// 	product.price = price;
-// 	product.category = category;
-// 	product.size = size;
-// 	product.description = description;
-
-// 	return product;
-// };
-
-
-// //	creates array for all products and initializes them
-// let productList = [];
-// let item1 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description");
-// let item2 = newProduct("Gloves", 12, "accessories", ["small", "medium", "large"], "This is a hat description");
-// let item3 = newProduct("Vest", 12, "outerwear", ["medium", "large"], "This is a hat description");
-// let item4 = newProduct("Pants", 12, "pants", ["large"], "This is a hat description");
-// let item5 = newProduct("Vest2", 12, "outerwear", ["small", "large"], "This is a hat description");
-// let item6 = newProduct("Hat2", 12, "accessories", ["small"], "This is a hat description");
-// let item7 = newProduct("Hat3", 12, "accessories", ["small"], "This is a hat description");
-// let item8 = newProduct("Jacket2", 12, "outerwear", ["small", "medium", "large"], "This is a hat description");
-// let item9 = newProduct("Jacket", 12, "accessories", ["large"], "This is a hat description");
-// let item10 = newProduct("Pants2", 12, "pants", ["medium"], "This is a hat description");
-// let item11 = newProduct("Vest3", 12, "outerwear", ["small", "medium"], "This is a hat description");
-// let item12 = newProduct("Hat", 12, "accessories", ["medium"], "This is a hat description");
-// productList.push(item1);
-// productList.push(item2);
-// productList.push(item3);
-// productList.push(item4);
-// productList.push(item5);
-// productList.push(item6);
-// productList.push(item7);
-// productList.push(item8);
-// productList.push(item9);
-// productList.push(item10);
-// productList.push(item11);
-// productList.push(item12);
-
-
-// //Prints all products to page
-// productList.forEach(function(product) {
-// 	updatePage(product);
+// 		for( var j = catArray.length - 1; j>=0; j--) {
+// 			if(catArray[j] === 'small') {
+// 				sizeMatch = true;
+// 			} 
+// 		}
+// 		if (sizeMatch =false) {
+// 			productList[i].css("color", "red");
+// 		}
+// 		console.log(productList[i]);
+// 	updatePage(productList[i]);
+// 	}
 // });
 
-
-// //	Function that updates the cart
-// function updatePage(item) {
-// 	var newItem = $("<div class='item'>Item</div>");
-// 	var pName = $("<p id='pName'>" + item.name +"</p>");
-// 	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
-// 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
-// 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
-
-// 	// var pImg = $("<p>" + item.img +"</p>");
-
-// 	// newItem.attr("class", "item");
-
-// //Adds object properties to div on page
-// 	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
-
-// //Adds all the data from the new item element to the page
-// 	$("#content").append(newItem);
-// };
->>>>>>> master
+//End of function
+});
