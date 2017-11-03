@@ -22,7 +22,7 @@ body {
 
 header {
 	flex: 1;
-	height: 50px;
+	max-height: 50px;
 }
 
 section {
@@ -277,8 +277,8 @@ aside {
 	
 		margin: 170px auto;
 		background-color: #fff;
-		width: 800px;
-		height: 70%;
+		width:50%;
+		height: 52%;
 		border-radius: 4px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 		padding: 20px;
@@ -288,18 +288,18 @@ aside {
 	
 	}
 	
+
 	#popup-title-bar{
 		height: 50px;
 		border-bottom: 1px solid #E3E3E3; 
 	}
 
-	#popup-title{
-
+	h2{
 		font-family: Avenir;
-		font-size: 32px;
+		font-size: 2em;
 		font-weight: 900;
 		text-align: center;
-		color: #6c6c6c;
+		color: #50e3c2;
 	}
 
 	
@@ -311,8 +311,21 @@ aside {
 	
 	.form-control{
 		flex-direction: column;
-		height: 98px;
+		margin: 20px;
+		text-align: left;
 	
+	}
+
+	label{
+		font-family: Avenir;
+		font-size: 1em;
+		font-weight: 300;
+		justify-content: flex-start;
+		text-align: left;
+		color: #8f8f8f;
+		margin:20px;
+		text-transform: capitalize;
+		margin-bottom: 10px;
 	}
 	
 	.input{
@@ -320,13 +333,14 @@ aside {
 		border: 1px solid #F2F2F2;
 		border-radius: 4px;
 		font-family: Avenir;
-		font-size: 1em;
-		font-weight: 500;
-		line-height: 1.5;
+		font-size: 2em;
+		font-weight: 900;
 		text-align: left;
-		color: #2c3e50;
+		color: #6673e0;
 		width: 100%;
-		height:100px;
+		height:64px;
+		text-indent: 20px;
+		margin-top:10px;
 		
 	}
 	
@@ -336,40 +350,49 @@ aside {
 
 	.btn {
 		width: 100%;
-		height: 33px;
+		height: 60px;
 		border-radius: 2px;
-		background-color: #0c9d58;
+		background-color: #6673e0;
 		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 		border:none;
 		font-family: Avenir;
-		font-size: 12px;
-		font-weight: 500;
-		letter-spacing: 1.1px;
+		font-size: 1.5em;
+		font-weight: 900;
 		text-align: center;
 		color: #ffffff;
+		letter-spacing: 1px;
 	
 	}
 	
 	.cancel {
 	
 		position: absolute;
-		margin: 20px;
+
+		right: 20px;
+		top:20px;
 		padding: 0;
 		border: 0;
+		text-align: right;
 		cursor: pointer;
-		margin-top: 20px;
 		font-family: Avenir;
-		font-size: 12px;
-		font-weight: 500;
-		letter-spacing: 1.1px;
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		font-weight: 900;
 		text-align: center;
-		color: #2C3E50;
+		color: #6673e0;
 		text-decoration: none;
 		background:none;
 		width: 30px;
-		right: 20px;
-		top:10px;
 	
+	}
+
+	#change_styling{
+		position: absolute;
+		font-family: Avenir;
+		font-size: 1em;
+		font-weight: 900;
+		text-align: right;
+		color: #50e3c2;
 	}
 	
 	.hover-details {
