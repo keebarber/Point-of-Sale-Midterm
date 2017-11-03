@@ -39,6 +39,7 @@ section {
 	align-items: center;
 	margin: 0;
 	padding: 0;
+	height:50px;
 
 }
 
@@ -104,10 +105,18 @@ section {
 	}
 
 #sizechart button {
+	margin: 20px 0;
 	width: 150px;
 	height: 30px;
-	border: 1px solid black;
+	border: 1px solid #e3e3e3;
+	background-color: #fff;
 	border-radius: 5px;
+	color: #6673e0;
+	font-family: Avenir;
+	font-size: 1em;
+	font-weight: 400;
+	text-align: center;
+	color: #6673e0;
 }
 
 #content {
@@ -118,12 +127,22 @@ section {
 }
 
 .item {
-	width: 200px;
-	height: 250px;
+	width: 150px;
+	height: 150px;
+	padding-top: 30px;
 	padding: 20px;
-	margin: 10px;
-	border: 2px solid black;
-	border-radius: 10px;
+	margin: 0 10px 10px 10px;
+	border-radius: 8px;
+	background: #FFFFFF;
+	border: 1px solid rgba(187, 187, 187, 0.479);
+	box-shadow: 0 1px 9px 0 rgba(107, 107, 107, 0.315);
+	text-align: left;
+	font-family: Avenir-Book;
+	font-size: .8em;
+	color: #6C6C6C;
+	letter-spacing: 0;
+	padding: 10px;
+
 }
 /* ----------- sidebar ----------- */
 
@@ -135,10 +154,22 @@ aside {
 }
 .itemincart {
 	margin: 10px 20px;
-	height: 120px;
-	border: 2px solid black;
-	border-radius: 10px;
-	
+	height: 50px;
+	padding: 10px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: row;
+	background-color: #FFF;
+	border: 2px solid #E3E3E3;
+	/* box-shadow: 0 1px 9px 0 rgba(107, 107, 107, 0.164); */
+	text-align: left;
+	font-family: Avenir-Book;
+	font-size: 1em;
+	color: #6673E0;
+	letter-spacing: 0;
+	text-align: left;
+	align-items: center;
+
 }
 
 
@@ -160,6 +191,7 @@ aside {
 #sidebar-title{
 	font-family: Avenir;
 	font-size: 1em;
+	font-weight: 500;
 	text-align: center;
 	color: #000000;
 	text-decoration: none;
@@ -219,17 +251,22 @@ aside {
 	color: #8f8f8f;
 }
 
-
-/*This needs to get centered or go somewhere else*/
 #btn-checkout {
-	position: absolute;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-/*	margin: 0 auto;
-*/	bottom: 10px;
-	right: 10px;
-	padding: 20px 20px;
-	border-radius: 5px;
+	background-color: #6673E0;
+	height:100%;
+	width:100%;
+	font-family: Avenir;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 1px;
+
+
+
 }
 #sidebartotal {
 	z-index: 2;
@@ -237,7 +274,7 @@ aside {
 	height: 10%;
 	width: 40%;
 	bottom: 0;
-	background-color: lightgrey;
+	box-shadow: 0 -1px 8px 0 rgba(83, 83, 83, 0.733);
 }
 
 /* ----------- overlay content ----------- */
