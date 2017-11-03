@@ -8,38 +8,35 @@
 			<div id="main-wrapper">
 
 				<header class = "title-bar">
-
+				<!--Header nav icon, dropdown menu, and cart toggle. Functionality to be set.  -->
 					<button id = "menu-button"><img src = "../images/menu.svg"></button>
 					<button id = "category-dropdown">Jackets and Vests</button>
 					<button id = "shopping-button"><img src = "../images/shopping-cart.svg"></button>
 	
 				</header>
-			
-				<!-- <p id = "instruction-text" >Add or remove items to the clients shopping cart.</p> -->
-				
+							
 				<section>
-
+				<!-- Toggles to display only items available in selected size. Functionality to be set -->
 					<div id="sizechart">
 						<button id = "small">small</button>
 						<button id = "medium">medium</button>
 						<button id = "large">large</button>
 					</div>
 
-					<div id="content">
-
-					</div>
+				<!-- Where all the inventory is placed -->
+					<div id="content"></div>
 
 				</section>
 
 			</div>
 
 		<aside>
-
+		<!-- Sidebar for cart that will eventually toggle with icon and mobile devices -->
 			<div id="sidebar">
 				<h1>Summary</h1>
 				<div id="itemsincart"></div>
 
-				
+			<!-- Footer of cart displaying total price with option to checkout -->
 				<div id = "sidebartotal">
 					<button id="btn-checkout">Checkout: $</button>
 				</div>
@@ -47,6 +44,7 @@
 
 		</aside>
 
+	<!-- Modal popup when user checks out cart -->
 		<section id = "popup">
 				
 				<div class = "form-container">
@@ -58,32 +56,29 @@
 						
 						<button type = "text" class = "cancel">CANCEL</button>
 
-						</div>
+					</div>
 
-						<div class="form-control">
+					<div class="form-control">
 								
-								<input class = "input" type = "text" placeholder="Cash - Enter amount" id = "cashGiven" autofocus>
-								</div>
+						<input class = "input" type = "text" placeholder="Cash - Enter amount" id = "cashGiven" autofocus>
+					</div>
 	
-						<div class="form-control">
+					<div class="form-control">
 						
 						<input class = "input" type = "text" placeholder="Credit Card - swipe or enter card number" id = "cardGiven" value="">
-						</div>
-
-						<h4><span id = "amountOfChange"></span></h4>
-	
-						<button type = "text" class = "btn" id = "print">Print Receipt</button>
-	
-						
-	
-	
 					</div>
+
+					<h4><span id = "amountOfChange"></span></h4>
+	
+					<button type = "text" class = "btn" id = "print">Print Receipt</button>
 	
 				</div>
 	
-			</section>
+			</div>
+	
+		</section>
 
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
 	<script src = "index.js"></script>
 	</body>
 </html>
