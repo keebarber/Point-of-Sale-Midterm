@@ -40,7 +40,6 @@ section {
 	margin: 0;
 	padding: 0;
 	height:50px;
-
 }
 
 
@@ -95,15 +94,6 @@ section {
 
 }
 
-#instruction-text{
-
-		font-family: Avenir;
-		font-size: .75em;
-		font-weight: 500;
-		text-align: center;
-		color: #8f8f8f;
-	}
-
 #sizechart button {
 	margin: 20px 0;
 	width: 150px;
@@ -128,15 +118,27 @@ section {
 .item {
 	padding-top: 30px;
 	padding: 20px;
+	margin: 10px 0;
 	background: #FFFFFF;
-	box-shadow: 0 1px 9px 0 rgba(107, 107, 107, 0.315);
+	box-shadow: 0 3px 9px 0 rgba(107, 107, 107, 0.315);
 	text-align: left;
 	font-family: Avenir-Book;
-	font-size: .8em;
+	font-size: 1em;
 	color: #6C6C6C;
 	letter-spacing: 0;
 	padding: 10px;
+	width: 220px;
+	height: 280px;
+	border: 1px solid rgb(220,220,220);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
 
+.item:active {
+	box-shadow: inset 0px 0px 32px 1px rgba(0,0,0,0.75);
 }
 /* ----------- sidebar ----------- */
 
@@ -152,19 +154,21 @@ aside {
 }
 .itemincart {
 	margin: 10px 20px;
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 	height: 120px;
 	border: 2px solid black;
 	border-radius: 10px;
 	background-color: rgba(160,160,160,.8);
 	color: white;
 	font-weight: 600;
-=======
+=======*/
 	height: 50px;
 	padding: 10px;
 	border-radius: 8px;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
 	background-color: #FFF;
 	border: 2px solid #E3E3E3;
 	/* box-shadow: 0 1px 9px 0 rgba(107, 107, 107, 0.164); */
@@ -174,9 +178,8 @@ aside {
 	color: #6673E0;
 	letter-spacing: 0;
 	text-align: left;
-	align-items: center;
->>>>>>> 2d8bc59478f49d5c9745527da5a0ad088d655f4b
-
+/*>>>>>>> 2d8bc59478f49d5c9745527da5a0ad088d655f4b
+*/
 }
 
 
@@ -212,7 +215,7 @@ aside {
 	
 }
 
-#btn-checkout {
+/*#btn-checkout {
 	width: 90%;
 	padding: 20px 20px;
 	border-radius: 15px;
@@ -237,7 +240,7 @@ aside {
 	background-color: rgba(220,220,220,.7);
 	display: flex;
 	justify-content: center;
-}
+}*/
 
 /* --------- End Sidebar CSS ---------*/
 
@@ -290,8 +293,8 @@ aside {
 	color: #8f8f8f;
 }
 
-<<<<<<< HEAD
-=======
+/*<<<<<<< HEAD
+=======*/
 #btn-checkout {
 	display: flex;
 	align-items: center;
@@ -318,7 +321,7 @@ aside {
 	box-shadow: 0 -1px 8px 0 rgba(83, 83, 83, 0.733);
 }
 
->>>>>>> 2d8bc59478f49d5c9745527da5a0ad088d655f4b
+/*>>>>>>> 2d8bc59478f49d5c9745527da5a0ad088d655f4b*/
 /* ----------- overlay content ----------- */
 
 #popup {

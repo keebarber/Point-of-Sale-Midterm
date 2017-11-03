@@ -135,8 +135,8 @@ parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
 
 
 //	Prints out the total price to the button and top of modal
-	$("#totalPrice").text("Subtotal:  $" + subTotal + " + Tax:  $" + taxAmount + " = Total Price: $" +totalPrice);
-	$("#btn-checkout").text("Checkout: $" + totalPrice);
+	$("#totalPrice").text("Subtotal:  $" + subTotal + " + Tax:  $" + taxAmount.toFixed(2) + " = Total Price: $" +totalPrice);
+	$("#btn-checkout").text("Checkout: $" + totalPrice.toFixed(2));
 	return totalPrice;
 };
 
@@ -171,7 +171,7 @@ if (cashGiven !== "") {
 
 //	If payment is by cash, enter amount tendered
 	if(cashGiven >totalPrice){
-	$("#amountOfChange").text("Change: $" + amountOfChange);
+	$("#amountOfChange").text("Change: $" + amountOfChange.toFixed(2));
 
 //	Prints receipt when payment is processed
 		for (var i = shoppingCart.length - 1; i >= 0; i--) {
