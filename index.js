@@ -105,7 +105,9 @@ $(document).on("click", ".item", function() {
 		return false;
 };
 
-//	Associates the returned object with a new variable for further referencing
+
+//	Git merge
+//Associates index of selected item with main array as a variable
  	let productToCart = findIndex(selectedObject);
 	shoppingCart.push(productToCart);
 
