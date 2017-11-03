@@ -162,6 +162,7 @@ $("#print").on("click", function(){
 	printReceipt();
 });
 
+//Prints after checkout
 //	PRINT RECEIPT function
 function printReceipt(){
 
