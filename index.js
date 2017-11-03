@@ -129,8 +129,13 @@ function calcPrice () {
 	let taxAmount = subTotal * .06;
 	let totalPrice = taxAmount + subTotal;
 
-//	Prints out the total price to the button
-	$("#totalPrice").text(totalPrice);
+parseFloat(Math.round(subTotal * 100) / 100).toFixed(2);
+parseFloat(Math.round(taxAmount * 100) / 100).toFixed(2);
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
+
+
+//	Prints out the total price to the button and top of modal
+	$("#totalPrice").text("Subtotal:  $" + subTotal + " + Tax:  $" + taxAmount + " = Total Price: $" +totalPrice);
 	$("#btn-checkout").text("Checkout: $" + totalPrice);
 	return totalPrice;
 };
@@ -157,9 +162,12 @@ function printReceipt(){
 
 let cashGiven = $("#cashGiven").val();
 let totalPrice = calcPrice();
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
+
 
 if (cashGiven !== "") {
 	let amountOfChange = cashGiven - totalPrice;
+	parseFloat(Math.round(amountOfChange * 100) / 100).toFixed(2);
 
 //	If payment is by cash, enter amount tendered
 	if(cashGiven >totalPrice){
@@ -194,6 +202,30 @@ if (cashGiven !== "") {
 	}
 
 }
+
+//	Atttempting to get size selectors to work
+
+// $("#small").on("click", function() {
+// 	let catArray = [];
+// 	let sizeMatch = false;
+
+// 	for (var i = productList.length - 1; i >= 0; i--) {
+		
+// 		catArray = productList[i].size;
+// 		sizeMatch = false;
+
+// 		for( var j = catArray.length - 1; j>=0; j--) {
+// 			if(catArray[j] === 'small') {
+// 				sizeMatch = true;
+// 			} 
+// 		}
+// 		if (sizeMatch =false) {
+// 			productList[i].css("color", "red");
+// 		}
+// 		console.log(productList[i]);
+// 	updatePage(productList[i]);
+// 	}
+// });
 
 //End of functionj
 });

@@ -128,17 +128,24 @@ section {
 /* ----------- sidebar ----------- */
 
 aside {
-	background-color: #FFFFFF;
+	/*background-color:rgb(220,220,220);*/
 	margin: 0 auto;
 	width: 40%;
-	border-left: 1px solid #E3E3E3; 
+	border-left: 4px solid #E3E3E3; 
+/*	background-image: url("background.jpg");
+	background-position: center;
+	background-repeat: repeat-y;*/
+	/*background-size: 60%;*/
 }
 .itemincart {
 	margin: 10px 20px;
 	height: 120px;
 	border: 2px solid black;
 	border-radius: 10px;
-	
+	background-color: rgba(160,160,160,.8);
+	color: white;
+	font-weight: 600;
+
 }
 
 
@@ -167,8 +174,40 @@ aside {
 	background: none;
 	padding: 0;
 	margin-top:15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	
 }
+
+#btn-checkout {
+	width: 90%;
+	padding: 20px 20px;
+	border-radius: 15px;
+	background-color: #0C9D58;
+	margin: 1%;
+	font-weight: 800px;
+	font-size: 1.25em;
+	color: white;
+	text-shadow: 2px 2px black;
+	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+}
+
+#btn-checkout:hover {
+	filter:  brightness(.8);
+}
+#sidebartotal {
+	z-index: 2;
+	position: fixed;
+	height: 10%;
+	width: 40%;
+	bottom: 0;
+	background-color: rgba(220,220,220,.7);
+	display: flex;
+	justify-content: center;
+}
+
+/* --------- End Sidebar CSS ---------*/
 
 #back-button{
 	display: none;
@@ -217,27 +256,6 @@ aside {
 	font-weight: 500;
 	text-align: center;
 	color: #8f8f8f;
-}
-
-
-/*This needs to get centered or go somewhere else*/
-#btn-checkout {
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-/*	margin: 0 auto;
-*/	bottom: 10px;
-	right: 10px;
-	padding: 20px 20px;
-	border-radius: 5px;
-}
-#sidebartotal {
-	z-index: 2;
-	position: fixed;
-	height: 10%;
-	width: 40%;
-	bottom: 0;
-	background-color: lightgrey;
 }
 
 /* ----------- overlay content ----------- */
