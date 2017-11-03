@@ -56,7 +56,7 @@ function updatePage(item) {
 
 	var newItem = $("<div class='item'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>"  + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
 	//var pImg = $("<img id ='images' src = '" + item.img + "'>");
@@ -76,14 +76,17 @@ function updatePage(item) {
 
 //	Gathers item information and creates element in same process as initial printing of products to main page
 function updateCart(item) {
-
+debugger;
 	var newItem = $("<div class='itemincart'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>" + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
 
-	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
+	$(newItem)
+	.append(pName)
+	.append(pPrice)
+	.append(pCat);//.append(pImg);
 
 	$("#itemsincart").prepend(newItem);
 };
@@ -227,5 +230,5 @@ if (cashGiven !== "") {
 // 	}
 // });
 
-//End of functionj
+//End of function
 });
