@@ -56,7 +56,7 @@ function updatePage(item) {
 
 	var newItem = $("<div class='item'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>"  + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
 	//var pImg = $("<img id ='images' src = '" + item.img + "'>");
@@ -76,14 +76,17 @@ function updatePage(item) {
 
 //	Gathers item information and creates element in same process as initial printing of products to main page
 function updateCart(item) {
-
+debugger;
 	var newItem = $("<div class='itemincart'></div>");
 	var pName = $("<p id='pName'>" + item.name +"</p>");
-	var pPrice = $("<p id='pPrice'>" + item.price +"</p>");
+	var pPrice = $("<p id='pPrice'>" + "  Price: $" + item.price +"</p>");
 	var pCat = $("<p id='pCat'>" + item.category +"</p>");
 	var pDetails= $("<p id='pDetails'>" + item.details +"</p>");
 
-	$(newItem).append(pName).append(pPrice).append(pCat);//.append(pImg);
+	$(newItem)
+	.append(pName)
+	.append(pPrice)
+	.append(pCat);//.append(pImg);
 
 	$("#itemsincart").prepend(newItem);
 };
@@ -129,9 +132,14 @@ function calcPrice () {
 	let taxAmount = subTotal * .06;
 	let totalPrice = taxAmount + subTotal;
 
-//	Prints out the total price to the button
-	$("#totalPrice").text(totalPrice);
-	$("#btn-checkout").text("Checkout: $" + totalPrice);
+parseFloat(Math.round(subTotal * 100) / 100).toFixed(2);
+parseFloat(Math.round(taxAmount * 100) / 100).toFixed(2);
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
+
+
+//	Prints out the total price to the button and top of modal
+	$("#totalPrice").text("Subtotal:  $" + subTotal + " + Tax:  $" + taxAmount.toFixed(2) + " = Total Price: $" +totalPrice);
+	$("#btn-checkout").text("Checkout: $" + totalPrice.toFixed(2));
 	return totalPrice;
 };
 
@@ -157,13 +165,16 @@ function printReceipt(){
 
 let cashGiven = $("#cashGiven").val();
 let totalPrice = calcPrice();
+parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
+
 
 if (cashGiven !== "") {
 	let amountOfChange = cashGiven - totalPrice;
+	parseFloat(Math.round(amountOfChange * 100) / 100).toFixed(2);
 
 //	If payment is by cash, enter amount tendered
 	if(cashGiven >totalPrice){
-	$("#amountOfChange").text("Change: $" + amountOfChange);
+	$("#amountOfChange").text("Change: $" + amountOfChange.toFixed(2));
 
 //	Prints receipt when payment is processed
 		for (var i = shoppingCart.length - 1; i >= 0; i--) {
@@ -195,5 +206,29 @@ if (cashGiven !== "") {
 
 }
 
-//End of functionj
+//	Atttempting to get size selectors to work
+
+// $("#small").on("click", function() {
+// 	let catArray = [];
+// 	let sizeMatch = false;
+
+// 	for (var i = productList.length - 1; i >= 0; i--) {
+		
+// 		catArray = productList[i].size;
+// 		sizeMatch = false;
+
+// 		for( var j = catArray.length - 1; j>=0; j--) {
+// 			if(catArray[j] === 'small') {
+// 				sizeMatch = true;
+// 			} 
+// 		}
+// 		if (sizeMatch =false) {
+// 			productList[i].css("color", "red");
+// 		}
+// 		console.log(productList[i]);
+// 	updatePage(productList[i]);
+// 	}
+// });
+
+//End of function
 });
